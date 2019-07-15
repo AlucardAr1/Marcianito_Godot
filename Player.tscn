@@ -1,0 +1,60 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://Mov.Derecha/Mov Derecha  Sprites 1.png" type="Texture" id=2]
+[ext_resource path="res://Mov.Derecha/Mov Derecha  Sprites 2.png" type="Texture" id=3]
+[ext_resource path="res://Mov.Derecha/Mov Derecha  Sprites 3.png" type="Texture" id=4]
+[ext_resource path="res://Mov.Derecha/Mov Derecha  Sprites 4.png" type="Texture" id=5]
+[ext_resource path="res://Mov.Derecha/Mov Derecha  Sprites 5.png" type="Texture" id=6]
+[ext_resource path="res://Mov.Derecha/Mov Derecha  Sprites 6.png" type="Texture" id=7]
+[ext_resource path="res://Salto Down.png" type="Texture" id=8]
+[ext_resource path="res://Salto UP.png" type="Texture" id=9]
+[ext_resource path="res://Enfrente  Sprites.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Caminar",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Caer",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "Saltar",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "Enfrente",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 125.442
+height = 270.522
+
+[node name="Player" type="KinematicBody2D"]
+editor/display_folded = true
+position = Vector2( 58.696, 253.575 )
+scale = Vector2( 0.1, 0.1 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -4.63312, -4.63281 )
+frames = SubResource( 1 )
+animation = "Caminar"
+frame = 5
+speed_scale = 3.0
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -12.2942, 3.07349 )
+shape = SubResource( 2 )
