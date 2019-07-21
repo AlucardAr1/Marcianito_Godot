@@ -16,12 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Marcianito 3.3 (10 niveles con VidePlayer)"
-run/main_scene="res://StartGame.tscn"
+run/main_scene="res://Start and End/StartGame.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://Global.gd"
+Global="res://Global.gd"
 
 [input]
 

@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var door
+var door2
 var motion = Vector2()
 var speed = 400
 var jumpforce = 140
@@ -9,7 +10,7 @@ var cont = 0
 
 func _ready():
 	door = get_parent().get_node("Door")
-	
+	door2 = get_parent().get_node("Teleport3")
 
 func _physics_process(delta):
 
@@ -63,5 +64,19 @@ func _on_Door_area_exited(area):
 	get_parent().get_node("Door").canGo = false
 	print("El jugador salio del area")
 	pass # Replace with function body.
-	
 
+
+
+
+
+func _on_Teleport3_area_entered(area):
+	print("El jugador entro al area")
+	get_parent().get_node("Teleport3").canGo = true
+	pass # Replace with function body.
+
+
+func _on_Teleport3_area_exited(area):
+	door2.canGo = false
+	get_parent().get_node("Teleport3").canGo = false
+	print("El jugador salio del area")
+	pass # Replace with function body.
