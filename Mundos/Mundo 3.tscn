@@ -2,15 +2,15 @@
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Jugador/Player.gd" type="Script" id=2]
-[ext_resource path="res://Animation Sprite/Salto/Salto Down.png" type="Texture" id=3]
-[ext_resource path="res://Animation Sprite/Salto/Salto UP.png" type="Texture" id=4]
-[ext_resource path="res://Animation Sprite/Quieto/Enfrente  Sprites.png" type="Texture" id=5]
-[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 1.png" type="Texture" id=6]
-[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 2.png" type="Texture" id=7]
-[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 3.png" type="Texture" id=8]
-[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 4.png" type="Texture" id=9]
-[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 5.png" type="Texture" id=10]
-[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 6.png" type="Texture" id=11]
+[ext_resource path="res://Animation Sprite/Quieto/Enfrente  Sprites.png" type="Texture" id=3]
+[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 1.png" type="Texture" id=4]
+[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 2.png" type="Texture" id=5]
+[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 3.png" type="Texture" id=6]
+[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 4.png" type="Texture" id=7]
+[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 5.png" type="Texture" id=8]
+[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 6.png" type="Texture" id=9]
+[ext_resource path="res://Animation Sprite/Salto/Salto UP.png" type="Texture" id=10]
+[ext_resource path="res://Animation Sprite/Salto/Salto Down.png" type="Texture" id=11]
 [ext_resource path="res://Player2.gd" type="Script" id=12]
 [ext_resource path="res://Camera2D.gd" type="Script" id=13]
 [ext_resource path="res://FondoSpace/thumb-1920-79341.jpg" type="Texture" id=14]
@@ -21,22 +21,22 @@
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "Caer",
+"name": "Enfrente",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Caminar",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "Saltar",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 11 ) ],
 "loop": true,
-"name": "Enfrente",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "Caminar",
+"name": "Caer",
 "speed": 5.0
 } ]
 
@@ -110,15 +110,14 @@ zoom = Vector2( 0.2, 0.2 )
 script = ExtResource( 13 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 scale = Vector2( 0.1, 0.1 )
 motion_scale = Vector2( 0.1, 0.1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 1547.13, 544.342 )
-scale = Vector2( 11.1423, 9.97856 )
+position = Vector2( 921.174, 544.342 )
+scale = Vector2( 11.7943, 9.97856 )
 texture = ExtResource( 14 )
 flip_h = true
 

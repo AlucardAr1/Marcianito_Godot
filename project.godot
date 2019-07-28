@@ -17,7 +17,12 @@ _global_script_class_icons={
 
 config/name="Marcianito 3.3 (10 niveles con VidePlayer)"
 run/main_scene="res://Start and End/StartGame.tscn"
-config/icon="res://icon.png"
+boot_splash/image="res://Loading.png"
+config/icon="res://Icon de game.png"
+
+[audio]
+
+driver=false
 
 [autoload]
 

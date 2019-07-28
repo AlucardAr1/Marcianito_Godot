@@ -6,6 +6,7 @@ var motion = Vector2()
 var speed = 400
 var jumpforce = 140
 var cont = 0
+var text_actual = null
 
 
 func _ready():
@@ -50,8 +51,12 @@ func _physics_process(delta):
 			$Sprite.play("Caer")
 		if friction == true:
 			motion.x = lerp(motion.x, 0, 0.5)
+		
+	
+		
 	
 	motion = move_and_slide(motion, Vector2(0,-1))
+
 
 func _on_Door_area_entered(area):
 	print("El jugador entro al area")

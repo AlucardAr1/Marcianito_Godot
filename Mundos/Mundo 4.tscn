@@ -2,15 +2,15 @@
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Jugador/Player.gd" type="Script" id=2]
-[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 1.png" type="Texture" id=3]
-[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 2.png" type="Texture" id=4]
-[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 3.png" type="Texture" id=5]
-[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 4.png" type="Texture" id=6]
-[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 5.png" type="Texture" id=7]
-[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 6.png" type="Texture" id=8]
-[ext_resource path="res://Animation Sprite/Salto/Salto UP.png" type="Texture" id=9]
-[ext_resource path="res://Animation Sprite/Salto/Salto Down.png" type="Texture" id=10]
-[ext_resource path="res://Animation Sprite/Quieto/Enfrente  Sprites.png" type="Texture" id=11]
+[ext_resource path="res://Animation Sprite/Quieto/Enfrente  Sprites.png" type="Texture" id=3]
+[ext_resource path="res://Animation Sprite/Salto/Salto Down.png" type="Texture" id=4]
+[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 1.png" type="Texture" id=5]
+[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 2.png" type="Texture" id=6]
+[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 3.png" type="Texture" id=7]
+[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 4.png" type="Texture" id=8]
+[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 5.png" type="Texture" id=9]
+[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 6.png" type="Texture" id=10]
+[ext_resource path="res://Animation Sprite/Salto/Salto UP.png" type="Texture" id=11]
 [ext_resource path="res://Player2.gd" type="Script" id=12]
 [ext_resource path="res://Camera2D.gd" type="Script" id=13]
 [ext_resource path="res://FondoSpace/planetas-del-espacio-fondos-hd-fotosdelanaturaleza-2-1-e1543071609877.jpg" type="Texture" id=14]
@@ -19,24 +19,24 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "Caminar",
+"name": "Enfrente",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "Saltar",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "Caer",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Caminar",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 11 ) ],
 "loop": true,
-"name": "Enfrente",
+"name": "Saltar",
 "speed": 5.0
 } ]
 
@@ -46,24 +46,24 @@ height = 270.522
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "Caminar",
+"name": "Enfrente",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "Saltar",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "Caer",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Caminar",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 11 ) ],
 "loop": true,
-"name": "Enfrente",
+"name": "Saltar",
 "speed": 5.0
 } ]
 
@@ -96,6 +96,7 @@ __meta__ = {
 position = Vector2( -4.63312, -4.63281 )
 frames = SubResource( 1 )
 animation = "Caminar"
+frame = 3
 speed_scale = 3.0
 playing = true
 __meta__ = {
@@ -125,6 +126,7 @@ __meta__ = {
 modulate = Color( 0.00784314, 1, 0.231373, 1 )
 frames = SubResource( 3 )
 animation = "Caminar"
+frame = 3
 speed_scale = 3.0
 playing = true
 
@@ -146,8 +148,8 @@ scale = Vector2( 0.1, 0.1 )
 motion_scale = Vector2( 0.1, 0.1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 884.827, 415.112 )
-scale = Vector2( 17.4055, 18.2533 )
+position = Vector2( -105.45, -226.476 )
+scale = Vector2( 21.2062, 22.9397 )
 texture = ExtResource( 14 )
 
 [node name="Door" type="Area2D" parent="."]

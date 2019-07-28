@@ -1,21 +1,22 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Jugador/Player.gd" type="Script" id=2]
 [ext_resource path="res://Animation Sprite/Salto/Salto Down.png" type="Texture" id=3]
 [ext_resource path="res://Animation Sprite/Salto/Salto UP.png" type="Texture" id=4]
-[ext_resource path="res://Animation Sprite/Quieto/Enfrente  Sprites.png" type="Texture" id=5]
-[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 1.png" type="Texture" id=6]
-[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 2.png" type="Texture" id=7]
-[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 3.png" type="Texture" id=8]
-[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 4.png" type="Texture" id=9]
-[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 5.png" type="Texture" id=10]
-[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 6.png" type="Texture" id=11]
+[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 1.png" type="Texture" id=5]
+[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 2.png" type="Texture" id=6]
+[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 3.png" type="Texture" id=7]
+[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 4.png" type="Texture" id=8]
+[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 5.png" type="Texture" id=9]
+[ext_resource path="res://Animation Sprite/Mov Derecha  Sprites 6.png" type="Texture" id=10]
+[ext_resource path="res://Animation Sprite/Quieto/Enfrente  Sprites.png" type="Texture" id=11]
 [ext_resource path="res://Player2.gd" type="Script" id=12]
 [ext_resource path="res://Camera2D.gd" type="Script" id=13]
 [ext_resource path="res://FondoSpace/472b3e40808e3bc69287743196c2ed0b.jpg" type="Texture" id=14]
 [ext_resource path="res://Teleport/Door.gd" type="Script" id=15]
 [ext_resource path="res://Menu/black-transparent-hole-5-original.png" type="Texture" id=16]
+[ext_resource path="res://Text/Text Dialogo.tscn" type="PackedScene" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -29,14 +30,14 @@ animations = [ {
 "name": "Saltar",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "Enfrente",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "Caminar",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "Enfrente",
 "speed": 5.0
 } ]
 
@@ -56,14 +57,14 @@ animations = [ {
 "name": "Saltar",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "Enfrente",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "Caminar",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "Enfrente",
 "speed": 5.0
 } ]
 
@@ -95,7 +96,7 @@ script = ExtResource( 2 )
 position = Vector2( -4.63312, -4.63281 )
 frames = SubResource( 1 )
 animation = "Caminar"
-frame = 4
+frame = 3
 speed_scale = 3.0
 playing = true
 __meta__ = {
@@ -125,7 +126,7 @@ __meta__ = {
 modulate = Color( 0.00784314, 1, 0.231373, 1 )
 frames = SubResource( 3 )
 animation = "Caminar"
-frame = 4
+frame = 3
 speed_scale = 3.0
 playing = true
 
@@ -141,15 +142,14 @@ zoom = Vector2( 0.2, 0.2 )
 script = ExtResource( 13 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 scale = Vector2( 0.1, 0.1 )
 motion_scale = Vector2( 0.1, 0.1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 712.437, 710.823 )
-scale = Vector2( 8.80018, 7.4853 )
+position = Vector2( -1158.67, -613.668 )
+scale = Vector2( 12.4136, 11.7952 )
 texture = ExtResource( 14 )
 
 [node name="Door" type="Area2D" parent="."]
@@ -171,5 +171,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
 position = Vector2( -0.159851, -0.713486 )
 shape = SubResource( 5 )
+
+[node name="Label" parent="." instance=ExtResource( 17 )]
 [connection signal="area_entered" from="Door" to="Player" method="_on_Door_area_entered"]
 [connection signal="area_exited" from="Door" to="Player" method="_on_Door_area_exited"]
